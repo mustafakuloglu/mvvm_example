@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kuloglu.example.ui.payment.PaymentActivityViewModel" />
+    </data>
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kuloglu.example.ui.payment.PaymentActivity">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/payments"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:set_list="@{viewModel.paymentMethods}"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->viewModel.doubleClick()}"/>
+
+</android.support.constraint.ConstraintLayout>
+</layout>
